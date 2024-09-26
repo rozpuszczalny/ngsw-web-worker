@@ -1,0 +1,24 @@
+<h2>Web worker</h2>
+
+<p>
+  Is running: {{!!worker}}
+</p>
+
+<p *ngIf="lastWorkerError">{{lastWorkerError}}</p>
+
+<div *ngIf="worker">
+  <button (click)="send()">Send message to worker</button>
+  <button (click)="stopWorker()">Stop worker</button>
+  
+  <h3>Messages</h3>
+
+  <div>
+    <p *ngFor="let message of messages">
+      {{message}}
+    </p>
+  </div>
+</div>
+
+<div *ngIf="!worker">
+  <button (click)="startWorker()">Start worker</button>
+</div>

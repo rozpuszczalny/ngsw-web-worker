@@ -1,0 +1,7 @@
+<div *ngIf="update.isEnabled">
+  <button (click)="checkForUpdate()">Check for updates</button>
+  <button (click)="reload()" [disabled]="!updateAvailable">Reload</button>
+</div>
+<div *ngIf="!update.isEnabled">
+  <p>Service worker unavailable</p>
+</div>
